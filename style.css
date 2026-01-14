@@ -1,0 +1,234 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #010102 0%, #7e1111 100%);
+    color: #e2e2e2;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(34, 3, 5, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #580308, #e24949);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 1rem;
+}
+
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #610408;
+    background: #330c0e;
+    color: #e2e2e2;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #3b0505;
+    box-shadow: 0 0 0 3px rgba(80, 6, 10, 0.2);
+}
+
+#taskInput::placeholder {
+    color: #666;
+}
+
+.add-btn {
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #550404, #e64242);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(109, 6, 6, 0.4);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+.completion-summary {
+    background: rgba(94, 8, 12, 0.7);
+    border: 1px solid #5c3d3d;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #e2e2e2;
+    transition: all 0.3s ease;
+}
+
+.completion-summary span {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.task-item {
+    background: #470303;
+    margin-bottom: 12px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid #5c3d3d;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    border-color: #921818;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #5a0c0c;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.task-checkbox.checked {
+    background: #b62b2b;
+    border-color: #b62c2c;
+}
+
+.task-checkbox.checked::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
+}
+
+.delete-btn {
+    background: #ff4757;
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #ff3742;
+    transform: scale(1.1);
+}
+
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .input-section {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

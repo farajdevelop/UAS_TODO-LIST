@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web list tugas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 list tugas</h1>
+            <p class="subtitle">Masukan tugas yang akan kamu kerjakan</p>
+        </header>
+        
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Apa yang akan kita selesailkan?..."
+                maxlength="50"
+            >
+            <button onclick="addTask()" class="add-btn">
+                <span>+ Tambah</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <span id="taskCount">0 Tugas</span>
+            <span id="completedCount">0 Tugas selesai</span>
+        </div>
+
+        
+        <div class="completion-summary" id="completionSummary" style="display: none;">
+            <span id="completedTasksCount">0</span> tugas selesai dari <span id="totalTasksCount">0</span> tugas
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">📭</div>
+            <p>Tidak ada tugas yang di tambahkan!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
